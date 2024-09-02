@@ -1,10 +1,8 @@
 'use client'
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 import Comment, {CommentProps} from "@/components/Comment";
-import mitt from "next/dist/shared/lib/mitt";
 
-const emitter = mitt();
 const Blog = ({params}: Params) => {
     const {id} = params;
 

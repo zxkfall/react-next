@@ -1,39 +1,27 @@
 'use client'
-import React, {useEffect} from 'react';
+import React from 'react';
 import {UserContext, UserContextType} from "@/contexts/userContext";
-import {emitter} from "@/event/emitter";
+import {Card} from "@mui/material";
 
 interface CategoryProps {
-    state: string;
+    title: string;
 }
 
-const Category = ({state}: CategoryProps) => {
-
-    useEffect(() => {
-        const listener = (data: string) => {
-            console.log(data)
-        }
-
-        emitter.on('test', listener)
-
-        return () => {
-            emitter.off('test', listener)
-        }
-
-    }, [])
-
+const Category = ({title}: CategoryProps) => {
     return (
-        <UserContext.Consumer>
-            {
-                (user: UserContextType) => (
-                    <div>
-                        <h1>Category</h1>
-                        <h2>{user.name}</h2>
-                        <h2>State is {state}</h2>
-                    </div>
-                )
-            }
-        </UserContext.Consumer>
+        <Card>
+            <UserContext.Consumer>
+                {
+                    (user: UserContextType) => (
+                        <div>
+                            <h1>Category</h1>
+                            <h2>User name is: {user.name}</h2>
+                            <h2>Title is {title}</h2>
+                        </div>
+                    )
+                }
+            </UserContext.Consumer>
+        </Card>
     );
 };
 

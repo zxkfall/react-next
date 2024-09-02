@@ -10,7 +10,7 @@ const UserContext = createContext<UserContextType>({} as any);
 
 const UserProvider: React.FC<{ children: ReactNode }> = ({children}) => {
     const user: UserContextType = {
-        name: 'User Name',
+        name: 'Jack',
         age: 25,
     };
 
