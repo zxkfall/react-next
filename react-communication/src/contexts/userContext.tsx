@@ -6,7 +6,7 @@ export type UserContextType = {
     age: number;
 }
 
-const UserContext = createContext<UserContextType>({});
+const UserContext = createContext<UserContextType>({} as any);
 
 const UserProvider: React.FC<{ children: ReactNode }> = ({children}) => {
     const user: UserContextType = {

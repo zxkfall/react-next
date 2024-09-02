@@ -3,7 +3,9 @@ import React from 'react';
 import {Card, CardContent, Typography, CardActionArea, Button, Input} from '@mui/material';
 import Link from 'next/link';
 import {useUser} from "@/contexts/userContext";
-import mitt from "next/dist/shared/lib/mitt";
+import {MittEmitter} from "next/dist/shared/lib/mitt";
+import {emitter} from "@/event/emitter";
+
 
 
 const blogs = [
@@ -11,12 +13,11 @@ const blogs = [
     {id: 2, title: 'Blog Title 2', content: 'Blog Content 2'},
 ];
 
-interface HomeProps {
+export interface HomeProps {
     stateHandler: (param: string) => void;
-    emitter: mitt.Emitter;
 }
 
-export default function Home({stateHandler, emitter}: HomeProps) {
+export default function Home({stateHandler}: HomeProps) {
 
     const [value, setValue] = React.useState('');
 

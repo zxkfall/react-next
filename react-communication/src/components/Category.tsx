@@ -1,16 +1,16 @@
 'use client'
 import React, {useEffect} from 'react';
 import {UserContext, UserContextType} from "@/contexts/userContext";
-import mitt from "next/dist/shared/lib/mitt";
+import {emitter} from "@/event/emitter";
 
 interface CategoryProps {
     state: string;
-    emitter: mitt.Emitter;
 }
-const Category = ({state, emitter}: CategoryProps) => {
+
+const Category = ({state}: CategoryProps) => {
 
     useEffect(() => {
-        const listener = (data) => {
+        const listener = (data: string) => {
             console.log(data)
         }
 
