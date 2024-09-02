@@ -3,8 +3,7 @@ import React from 'react';
 import Home from "@/components/Home";
 import {UserProvider} from "@/contexts/userContext";
 import Category from "@/components/Category";
-import {Card, CardActionArea, CardContent, Typography} from "@mui/material";
-import Link from "next/link";
+import {Card, CardActionArea, CardContent, List, ListItem, Typography, Link} from "@mui/material";
 
 const blogs = [
     {id: 1, title: 'Blog Title 1', content: 'Blog Content 1'},
@@ -39,19 +38,48 @@ export default function Index() {
     return (
         <>
             <UserProvider>
+                <Card sx={{padding: 3, maxWidth: 400, margin: 'auto', boxShadow: 3}}>
+                    <Typography variant="h4" component="h1" align="center" gutterBottom>
+                        Cases Link
+                    </Typography>
+                    <List>
+                        <ListItem>
+                            <Link href="/emitter" variant="body1" underline="hover" color="primary">
+                                Emitter
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="/event" variant="body1" underline="hover" color="primary">
+                                Event
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="/redux" variant="body1" underline="hover" color="primary">
+                                Redux
+                            </Link>
+                        </ListItem>
+                    </List>
+                </Card>
                 {renderBlogs()}
-                <Typography variant="h4" component="h1">
-                    {`Title is ${title}`}
-                </Typography>
-                <br/>
-                <div style={{
-                    display: 'flex',
-                    gap: '20px',
 
-                }}>
-                    <Home titleHandler={stateHandler}/>
-                    <Category title={title}/>
-                </div>
+                <Card sx={{padding: 3, maxWidth: 400, margin: 'auto', boxShadow: 3}}>
+                    <Typography variant="h3" component="h1">
+                        React props and hooks
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                        {`Title is ${title}`}
+                    </Typography>
+                    <br/>
+                    <div style={{
+                        display: 'flex',
+                        gap: '20px',
+
+                    }}>
+                        <Home titleHandler={stateHandler}/>
+                        <Category title={title}/>
+                    </div>
+                </Card>
+
             </UserProvider>
         </>
     );

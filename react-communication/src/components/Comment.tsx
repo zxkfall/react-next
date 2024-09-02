@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card} from "@mui/material";
-import {margin} from "@mui/system";
 
 export interface CommentProps {
     id: number;
