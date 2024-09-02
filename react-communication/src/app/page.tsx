@@ -58,6 +58,11 @@ export default function Index() {
                                 Redux
                             </Link>
                         </ListItem>
+                        <ListItem>
+                            <Link href="/event" variant="body1" underline="hover" color="primary">
+                                EventTarget
+                            </Link>
+                        </ListItem>
                     </List>
                 </Card>
                 {renderBlogs()}

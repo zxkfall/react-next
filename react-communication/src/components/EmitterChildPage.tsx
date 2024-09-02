@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Input} from "@mui/material";
-import {emitter} from "@/event/emitter";
+import {emitter, EmitterTypes} from "@/event/emitter";
 
 const EmitterChildPage = () => {
 
@@ -9,7 +9,7 @@ const EmitterChildPage = () => {
     return (
         <div>
             <Input value={value} onChange={(e) => setValue(e.target.value)}/>
-            <Button onClick={() => emitter.emit('test', value)}>Send Event</Button>
+            <Button onClick={() => emitter.emit(EmitterTypes.TEST, value)}>Send Event</Button>
         </div>
     );
 };

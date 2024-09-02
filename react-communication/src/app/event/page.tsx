@@ -1,32 +1,31 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import {emitter} from "@/event/emitter";
+import {eventTarget, EventTypes} from "@/event/eventTarget";
+import EventChildPage from "@/components/EventChildPage";
 
-const EmitterPage = () => {
+const EventTargetPage = () => {
 
-    const [emitterValue, setEmitterValue] = useState<string>()
+    const [eventValue, setEventValue] = useState<string>()
 
-    //emitter
+    //event
     useEffect(() => {
-        const listener = (data: string) => {
-            console.log(data)
-            setEmitterValue(data)
+        const listener = (e: Event) => {
+            setEventValue((e as CustomEvent).detail)
         }
-
-        emitter.on('test', listener)
-
+        eventTarget.addEventListener(EventTypes.EVENT_TARGET, listener)
         return () => {
-            emitter.off('test', listener)
+            eventTarget.removeEventListener(EventTypes.EVENT_TARGET, listener)
         }
     }, []);
 
 
     return (
         <div>
-            <h1>Emitter</h1>
-            {emitterValue}
+            <h1>Event</h1>
+            {eventValue}
+            <EventChildPage/>
         </div>
     );
 };
 
-export default EmitterPage;
+export default EventTargetPage;

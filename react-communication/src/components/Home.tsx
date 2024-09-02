@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardContent, Typography, CardActionArea, Button, Input} from '@mui/material';
+import {Card, Button, Input} from '@mui/material';
 import {useUser} from "@/contexts/userContext";
 
 export interface HomeProps {
