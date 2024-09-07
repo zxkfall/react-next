@@ -1,7 +1,7 @@
 'use client'
 import {Provider} from "react-redux";
 import React from 'react';
-import NumberPage from "@/app/redux/Number/page";
+import NumberComponent from "@/components/NUmberComponents";
 import {store} from "@/store/redux";
 
 const ReduxPage = () => {
@@ -9,7 +9,7 @@ const ReduxPage = () => {
         <>
             <h1>Redux Page</h1>
             <Provider store={store}>
-                <NumberPage/>
+                <NumberComponent/>
             </Provider>
         </>
     );

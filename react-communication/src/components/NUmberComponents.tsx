@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Button} from "@mui/material";
 import {decremented} from "@/store/redux";
 
-const NumberPage = () => {
+const NumberComponent = () => {
     const value = useSelector((state: any) => state.value);
     const dispatch = useDispatch();
 
@@ -17,4 +17,4 @@ const NumberPage = () => {
     );
 };
 
-export default NumberPage;
+export default NumberComponent;
