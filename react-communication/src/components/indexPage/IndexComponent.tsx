@@ -5,12 +5,11 @@ import {UserProvider} from "@/contexts/userContext";
 import Category from "@/components/indexPage/Category";
 import {Card, CardActionArea, CardContent, List, ListItem, Typography, Link} from "@mui/material";
 
-const blogs = [
-    {id: 1, title: 'Blog Title 1', content: 'Blog Content 1'},
-    {id: 2, title: 'Blog Title 2', content: 'Blog Content 2'},
-];
+interface IndexComponentProps {
+    blogs: any[];
+}
 
-const IndexComponent = () => {
+const IndexComponent = ({blogs}: IndexComponentProps) => {
 
     const [title, setTitle] = React.useState('initial title');
 
