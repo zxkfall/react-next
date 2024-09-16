@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, Input} from "@mui/material";
 import {emitter, EmitterTypes} from "@/event/emitter";
 
-const EmitterChildPage = () => {
+const EmitterChildComponent = () => {
 
     const [value, setValue] = useState<string>('')
 
@@ -14,4 +14,4 @@ const EmitterChildPage = () => {
     );
 };
 
-export default EmitterChildPage;
+export default EmitterChildComponent;

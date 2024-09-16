@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, Input} from "@mui/material";
 import {eventTarget, EventTypes} from "@/event/eventTarget";
 
-const EventChildPage = () => {
+const EventChildComponent = () => {
     const [value, setValue] = useState<string>('')
 
     return (
@@ -15,4 +15,4 @@ const EventChildPage = () => {
     );
 };
 
-export default EventChildPage;
+export default EventChildComponent;
